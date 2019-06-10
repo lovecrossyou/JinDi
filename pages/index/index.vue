@@ -75,6 +75,7 @@
 		text-align: center;
 
 		border: dashed 1upx #8F8F94;
+		margin-bottom: 10upx;
 	}
 
 	.footer {

@@ -22,7 +22,9 @@ request.interceptors.request.use((request) => {
 
 request.interceptors.response.use((response, promise) => {
 	uni.hideLoading()
-	if (!(response.data.status === "ok")) {
+	
+	console.log('response.data ###', response.data);
+	if (!(response.data.status === 1)) {
 		if (response.data.status === "-999") {
 			//需要登录权限
 			this.$store.commit("setLogin", false)

@@ -20,9 +20,17 @@
 				this.value = e.detail.value;
 			},
 			async addClick(){
+				if(this.value.length===0){
+					uni.showToast({
+						title:"请输入名称"
+					})
+					return;
+				}
 				const res = await api.addCategory({
 					name:this.value
 				})
+				uni.navigateBack({					
+				});
 			}
 		},
 		components: {

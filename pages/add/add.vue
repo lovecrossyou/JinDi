@@ -68,7 +68,8 @@
 						category_id:this.category_id,
 						picture_url: url
 					})
-				})
+				});
+				uni.navigateBack();
 			}
 		}
 	}

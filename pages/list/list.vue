@@ -48,10 +48,10 @@
 				})
 			},
 			preView(index) {
-				console.log('xxx');
 				// 预览图片
 				uni.previewImage({
 					current:index,
+					indicator:'number',
 					urls: this.list.map(item => item.picture_url),
 					longPressActions: {
 						itemList: ['发送给朋友', '保存图片', '收藏'],
