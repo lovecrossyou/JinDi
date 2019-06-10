@@ -15,6 +15,10 @@
             "path" : "pages/add/add",
             "style" : {}
         }
+        ,{
+            "path" : "pages/addcategory/addcategory",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

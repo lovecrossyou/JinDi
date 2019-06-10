@@ -18,7 +18,7 @@
 
 
 		<!-- 添加 -->
-		<view class="footer">
+		<view class="footer" @click="addcategory">
 			添加类别
 		</view>
 	</view>
@@ -38,6 +38,11 @@
 			detail(){
 				uni.navigateTo({
 					url:"/pages/list/list"
+				})
+			},
+			addcategory(){
+				uni.navigateTo({
+					url:"/pages/addcategory/addcategory"
 				})
 			}
 		}
