@@ -1,12 +1,13 @@
 <template>
 	<view class="main">
 		<uniInput :before="'填写分类名称'" :after="'分类名称'" :name="'invoice_title'" :value="value" @input="input"></uniInput>
-		<button type="primary" plain="true" size="default" class="btn-add">添加</button>
+		<button type="primary" plain="true" size="default" class="btn-add" @click="addClick">添加</button>
 	</view>
 </template>
 
 <script>
 	import uniInput from '@/components/hnfly-input/uni-input.vue';
+	import api from '@/util/api.js'
 
 	export default {
 		data() {
@@ -18,6 +19,11 @@
 			input: function(e) {
 				this.value = e.detail.value;
 			},
+			async addClick(){
+				const res = await api.addCategory({
+					name:this.value
+				})
+			}
 		},
 		components: {
 			uniInput

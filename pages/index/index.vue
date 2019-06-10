@@ -3,19 +3,10 @@
 		<image class="logo" src="/static/logo.jpeg"></image>
 
 		<view class="main_items">
-			<view class="main_item" @click="detail">
-				规划图
-			</view>
-
-			<view class="main_item">
-				效果图
-			</view>
-
-			<view class="main_item">
-				实景图
+			<view class="main_item" v-for="(item,index) in list" :key="index" @click="detail(item)">
+				{{item.name}}
 			</view>
 		</view>
-
 
 		<!-- 添加 -->
 		<view class="footer" @click="addcategory">
@@ -25,24 +16,32 @@
 </template>
 
 <script>
+	// 
+	import api from '@/util/api.js'
+
 	export default {
 		data() {
 			return {
-				title: '金地滨河风华'
+				list: []
 			}
 		},
-		onLoad() {
-
+		async onLoad() {
+			this.initData();
 		},
 		methods: {
-			detail(){
+			async initData() {
+				const res = await api.getCategories();
+				this.list = res.data;
+			},
+			detail(item) {
+				console.log('item ', item)
 				uni.navigateTo({
-					url:"/pages/list/list"
+					url: "/pages/list/list?category_id="+item._id+'&category_name='+item.name
 				})
 			},
-			addcategory(){
+			addcategory() {
 				uni.navigateTo({
-					url:"/pages/addcategory/addcategory"
+					url: "/pages/addcategory/addcategory"
 				})
 			}
 		}
