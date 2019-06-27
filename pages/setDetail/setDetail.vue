@@ -130,11 +130,12 @@
 		margin-left: 10upx;
 		padding: 0 30upx;
 		box-sizing: border-box;
+		line-height: 90upx;
 		/* display: inline-block; */
 	}
 	
 	.swiper{
-		height: 45%;
+		height: 80%;
 		background-color: #5989B9;
 	}
 
