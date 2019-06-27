@@ -20,45 +20,50 @@
 		
 		 <view class="footer">
 			 
-			<view class="scroll-item">
+			<view class="myitem">
 				xxxx
 			</view>
 			
-			<view class="scroll-item">
-				000
+			<view class="myitem">
+				xxxx
+			</view>
+			<view class="myitem">
+				xxxx
+			</view>
+			<view class="myitem">
+				xxxx
+			</view>
+			<view class="myitem">
+				xxxx
+			</view>
+			<view class="myitem">
+				xxxx
+			</view>
+			<view class="myitem">
+				xxxx
 			</view>
 			
-			<view class="scroll-item">
-				da
+			<view class="myitem">
+				xxxx
 			</view>
 			
-			<view class="scroll-item">
-				2323
+			<view class="myitem">
+				xxxx
 			</view>
-			<view class="scroll-item">
-				000
+			<view class="myitem">
+				xxxx
 			</view>
-			
-			<view class="scroll-item">
-				da
+			<view class="myitem">
+				xxxx
 			</view>
-			
-			<view class="scroll-item">
-				2323
+			<view class="myitem">
+				xxxx
 			</view>
-			
-			<view class="scroll-item">
-				da
+			<view class="myitem">
+				xxxx
 			</view>
-			<view class="scroll-item">
-				2323
-			</view>
-			<view class="scroll-item">
-				2323
-			</view>
-			
-			<view class="scroll-item">
-				2323
+			<view class="myitem">
+				xxxx
 			</view>
 		</view>
 	</view>
@@ -117,13 +122,15 @@
 		overflow-x: scroll;
 	}
 	
-	.scroll-item{
+	.myitem{
 		height: 90upx;
-		width: 120upx;
+		width: 150upx;
 		border: solid 1upx #8F8F94;
 		background: pink;
 		margin-left: 10upx;
-		display: inline-block;
+		padding: 0 30upx;
+		box-sizing: border-box;
+		/* display: inline-block; */
 	}
 	
 	.swiper{
