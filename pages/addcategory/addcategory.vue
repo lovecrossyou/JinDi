@@ -42,6 +42,8 @@
 <style>
 .main{
 	width: 100%;
+	padding: 0 24upx;
+	box-sizing: border-box;
 }
 
 .btn-add{

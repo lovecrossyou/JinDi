@@ -1,5 +1,17 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+            "path" : "pages/mulu/mulu",
+            "style" : {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" //透明渐变导航栏
+					}
+				}
+			}
+        },
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -19,11 +31,38 @@
             "path" : "pages/addcategory/addcategory",
             "style" : {}
         }
+        
+        ,{
+            "path" : "pages/setlist/setlist",
+            "style" : {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" //透明渐变导航栏
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/setDetail/setDetail",
+            "style" : {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" //透明渐变导航栏
+					}
+				}
+			}
+        }
+        
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "金地滨河风华",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"pageOrientation":"auto"
 	}
 }

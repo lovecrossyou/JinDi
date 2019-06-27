@@ -14,4 +14,12 @@
 
 <style>
 	/*每个页面公共css */
+	
+@font-face {
+    font-family: uniicons;
+    font-weight: normal;
+    font-style: normal;
+    src: url('~/static/font/qingkaiti.ttf') format('truetype');
+}
+
 </style>

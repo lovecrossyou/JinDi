@@ -1,5 +1,5 @@
 {
-    "name" : "PictureBrowser",
+    "name" : "金地风华",
     "appid" : "__UNI__980404B",
     "description" : "",
     "versionName" : "1.0.0",
@@ -50,7 +50,7 @@
             "sdkConfigs" : {},
             "icons" : {
                 "ios" : {
-                    "appstore" : "/Users/crosszhu/Documents/logo.png",
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",

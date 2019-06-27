@@ -36,7 +36,7 @@
 			detail(item) {
 				console.log('item ', item)
 				uni.navigateTo({
-					url: "/pages/list/list?category_id="+item._id+'&category_name='+item.name
+					url: "/pages/list/list?category_id=" + item._id + '&category_name=' + item.name
 				})
 			},
 			addcategory() {
@@ -65,17 +65,17 @@
 	.main_items {
 		margin-bottom: 50upx;
 	}
-
 	.main_item {
 		font-size: 36upx;
 		color: #8f8f94;
-
+		font-family: uniicons;
 		height: 120upx;
 		line-height: 120upx;
 		text-align: center;
 
 		border: dashed 1upx #8F8F94;
 		margin-bottom: 10upx;
+		
 	}
 
 	.footer {
@@ -87,5 +87,6 @@
 		line-height: 80upx;
 		background-color: #6699CC;
 		color: #FFFFFF;
+		font-family: uniicons;
 	}
 </style>
