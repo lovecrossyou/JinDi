@@ -29,7 +29,6 @@
 	export default {
 		data() {
 			return {
-				background: ['color1', 'color2', 'color3'],
 				indicatorDots: true,
 				autoplay: true,
 				interval: 2000,
@@ -37,29 +36,26 @@
 				sh: 0,
 				title: 'Hello',
 				current:0,
-				testimgs: [{
-						url: "http://p1.meituan.net/movie/d94e5c3054778f6f48bff3a813b0b7cd5300998.jpg@170w_235h_1e_1c",
-					},
-					{
-						url: "http://p0.meituan.net/movie/616cd50a33550a9225ac781e52d14ae54967551.jpg@170w_235h_1e_1c"
-					},
-					{
-						url: "http://p0.meituan.net/movie/fc4dd6cd0c6f7db566a128cc05c475355664427.jpg@170w_235h_1e_1c"
-					},
-					{
-						url: "http://p0.meituan.net/movie/0aef20518b12365b524917332424e3c9293610.jpg@170w_235h_1e_1c"
-					},
-					{
-						url: "http://p0.meituan.net/movie/034069fc367db8a7d9644717b416cc2c332883.jpg@170w_235h_1e_1c"
-					},
-					{
-						url: "http://p0.meituan.net/movie/9ef02a501fee7f62d49d2096b52175d32155331.jpg@170w_235h_1e_1c"
-					}
+				imgs: [
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg1LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiXC9xdWFsaXR5LHFfOTAifQ%3D%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMTM0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mjk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mzk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg1LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiXC9xdWFsaXR5LHFfOTAifQ%3D%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMTM0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mjk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mzk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D'
 				]
 			}
 		},
-		onLoad() {
-			this.setimgs();
+		computed:{
+			testimgs(){
+				return this.imgs.map(item=> {
+					return {url:item}
+				});
+			}
 		},
 		methods: {
 			changeIndicatorDots(e) {
@@ -78,26 +74,6 @@
 				if (imgviewobj.index != undefined){
 					this.current = imgviewobj.index;
 				}
-			},
-			setimgs() {
-				var imgs = [];
-				for (let i in this.testimgs) {
-					let imgobj = {
-						dec: '', //图像描述信息
-						badeg: '', //角标文字
-						badegcolor: '#000000', //角标颜色
-						url: '', //图源  
-						dominant: '' //主色  
-					};
-					imgobj.url = this.testimgs[i].url;
-					imgobj.dominant = this.retcolor(); //随机主色
-					imgobj.dec = i; //描述  
-					imgobj.badeg = i; //角标文字
-					imgobj.badegcolor = (i % 2) == 0 ? 'red' : 'LimeGreen'; //角标颜色
-
-					imgs.push(imgobj)
-				}
-				this.testimgs = imgs;
 			},
 			retcolor() {
 				let color = '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).substr(-6);
@@ -139,8 +115,8 @@
 	}
 
 	.swiper {
-		height: 60%;
-		background-color: #5989B9;
+		height: 75%;
+		/* background-color: #5989B9; */
 	}
 
 	.main {}
@@ -155,7 +131,7 @@
 
 	.content {
 		width: 100%;
-		height: 80%;
+		height: 75%;
 		padding: 30upx;
 		box-sizing: border-box;
 		overflow-y: scroll;
@@ -163,6 +139,7 @@
 
 	.swiper-item {
 		width: 100%;
+		border-radius: 8upx;
 	}
 
 	.item {

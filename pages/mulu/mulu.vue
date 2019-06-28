@@ -18,10 +18,10 @@
 			<view class="top-menu-right">添加</view>
 		</view>
 		<view class="content">
-			<view class="item">千亿金地</view>
-			<view class="item">东方风华</view>
-			<view class="item">世界滨河</view>
-			<view class="item">滨河风华</view>
+			<view class="item" @click="drawer_show">千亿金地</view>
+			<view class="item" @click="drawer_show">东方风华</view>
+			<view class="item" @click="drawer_show">世界滨河</view>
+			<view class="item" @click="drawer_show">滨河风华</view>
 		</view>
 	</view>
 </template>

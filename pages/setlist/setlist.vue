@@ -7,7 +7,7 @@
 		<view class="content">
 			<view class="set-image-wrapper">
 				<block v-for="(item,index) in items" :key="index">
-					<image @click="goDetail" src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
+					<image @click="goDetail" :src="item" class="set-image"></image>
 				</block>
 			</view>
 		</view>
@@ -18,7 +18,18 @@
 	export default {
 		data() {
 			return {
-				items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+				items: [
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg1LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiXC9xdWFsaXR5LHFfOTAifQ%3D%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMTM0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mjk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mzk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg1LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiXC9xdWFsaXR5LHFfOTAifQ%3D%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMjg0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzUwMTM0LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mjk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D',
+					'http://imgs.julive.com/l?p=eyJpbWdfcGF0aCI6IlwvVXBsb2FkXC9wcm9qZWN0X2ltZ1wvNVwvMjAwMDg5MTZcLzIwMTcwOTE4MTkzMzQ5Mzk3LmpwZyIsImltZ19wYXJhbV9hcnIiOltdLCJ4LW9zcy1wcm9jZXNzIjoiIn0%3D'
+				]
 			}
 		},
 		methods: {
@@ -75,6 +86,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		width: 100%;
+		
 	}
 
 	.set-image {
@@ -83,6 +95,7 @@
 		/* background: #8F8F94; */
 		border: solid 2upx #5989B9;
 		margin-bottom: 30upx;
+		border-radius: 8upx;
 	}
 
 	.item {
