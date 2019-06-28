@@ -5,71 +5,27 @@
 		</view>
 
 		<view class="content">
-			<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-				<swiper-item>
-					<view class="swiper-item uni-bg-red">A</view>
-				</swiper-item>
-				<swiper-item>
-					<view class="swiper-item uni-bg-green">B</view>
-				</swiper-item>
-				<swiper-item>
-					<view class="swiper-item uni-bg-blue">C</view>
-				</swiper-item>
+			<swiper :current="current" class="swiper" :indicator-dots="indicatorDots" :interval="interval" :duration="duration">
+				<block v-for="(item ,index) in testimgs" :key="index">
+					<swiper-item>
+						<image :src="item.url" class="swiper-item" mode="widthFix"></image>
+					</swiper-item>
+				</block>
 			</swiper>
 		</view>
-		
-		 <view class="footer">
-			 
-			<view class="myitem">
-				xxxx
-			</view>
-			
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			
-			<view class="myitem">
-				xxxx
-			</view>
-			
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
-			</view>
-			<view class="myitem">
-				xxxx
+
+		<view class="content-footer">
+			<view>
+				<ynGallery :galleryheight="120" bkstart="#000000" bkend="#000000" :imgviewwidth="85" :imgviewheight="90" :showbadge="false"
+				 badegtype="trian" badegwidth="25" badegheight="25" :showdec="false" :images="testimgs" @clickimg="onclickimg">
+				</ynGallery>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import ynGallery from '@/components/YnComponents/ynGallery/ynGallery.vue'
 	export default {
 		data() {
 			return {
@@ -77,8 +33,33 @@
 				indicatorDots: true,
 				autoplay: true,
 				interval: 2000,
-				duration: 500
+				duration: 500,
+				sh: 0,
+				title: 'Hello',
+				current:0,
+				testimgs: [{
+						url: "http://p1.meituan.net/movie/d94e5c3054778f6f48bff3a813b0b7cd5300998.jpg@170w_235h_1e_1c",
+					},
+					{
+						url: "http://p0.meituan.net/movie/616cd50a33550a9225ac781e52d14ae54967551.jpg@170w_235h_1e_1c"
+					},
+					{
+						url: "http://p0.meituan.net/movie/fc4dd6cd0c6f7db566a128cc05c475355664427.jpg@170w_235h_1e_1c"
+					},
+					{
+						url: "http://p0.meituan.net/movie/0aef20518b12365b524917332424e3c9293610.jpg@170w_235h_1e_1c"
+					},
+					{
+						url: "http://p0.meituan.net/movie/034069fc367db8a7d9644717b416cc2c332883.jpg@170w_235h_1e_1c"
+					},
+					{
+						url: "http://p0.meituan.net/movie/9ef02a501fee7f62d49d2096b52175d32155331.jpg@170w_235h_1e_1c"
+					}
+				]
 			}
+		},
+		onLoad() {
+			this.setimgs();
 		},
 		methods: {
 			changeIndicatorDots(e) {
@@ -92,7 +73,39 @@
 			},
 			durationChange(e) {
 				this.duration = e.target.value
+			},
+			onclickimg(imgviewobj) {
+				if (imgviewobj.index != undefined){
+					this.current = imgviewobj.index;
+				}
+			},
+			setimgs() {
+				var imgs = [];
+				for (let i in this.testimgs) {
+					let imgobj = {
+						dec: '', //图像描述信息
+						badeg: '', //角标文字
+						badegcolor: '#000000', //角标颜色
+						url: '', //图源  
+						dominant: '' //主色  
+					};
+					imgobj.url = this.testimgs[i].url;
+					imgobj.dominant = this.retcolor(); //随机主色
+					imgobj.dec = i; //描述  
+					imgobj.badeg = i; //角标文字
+					imgobj.badegcolor = (i % 2) == 0 ? 'red' : 'LimeGreen'; //角标颜色
+
+					imgs.push(imgobj)
+				}
+				this.testimgs = imgs;
+			},
+			retcolor() {
+				let color = '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).substr(-6);
+				return color;
 			}
+		},
+		components: {
+			ynGallery
 		}
 	}
 </script>
@@ -107,22 +120,13 @@
 		top: 0;
 		bottom: 0;
 	}
-	
 
-	
-	.footer{
-		position: fixed;
-		bottom: 50upx;
-		height: 140upx;
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		background-color: #BDCAD3;
-		overflow-x: scroll;
+	.content-footer {
+		text-align: center;
+		height: 400upx;
 	}
-	
-	.myitem{
+
+	.myitem {
 		height: 90upx;
 		width: 150upx;
 		border: solid 1upx #8F8F94;
@@ -133,19 +137,13 @@
 		line-height: 90upx;
 		/* display: inline-block; */
 	}
-	
-	.swiper{
-		height: 80%;
+
+	.swiper {
+		height: 60%;
 		background-color: #5989B9;
 	}
 
-	.main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		flex: 1;
-		width: 100%;
-	}
+	.main {}
 
 	.header {
 		display: flex;
@@ -158,13 +156,14 @@
 	.content {
 		width: 100%;
 		height: 80%;
-		/* background-color: #5989B9; */
 		padding: 30upx;
 		box-sizing: border-box;
 		overflow-y: scroll;
 	}
 
-
+	.swiper-item {
+		width: 100%;
+	}
 
 	.item {
 		width: 60%;
@@ -174,5 +173,20 @@
 		text-align: center;
 		line-height: 80upx;
 		font-family: uniicons;
+	}
+
+
+
+	.logo {
+		height: 100upx;
+		width: 100upx;
+		margin-top: 350upx;
+		margin-bottom: 10upx;
+		border-radius: 50upx;
+	}
+
+	.title {
+		font-size: 36upx;
+		color: #8f8f94;
 	}
 </style>

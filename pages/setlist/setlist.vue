@@ -3,28 +3,12 @@
 		<view class="header">
 			<view class="item">金银风华系</view>
 		</view>
-		
+
 		<view class="content">
 			<view class="set-image-wrapper">
-				<image @click="goDetail" src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
-				<image src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
+				<block v-for="(item,index) in items" :key="index">
+					<image @click="goDetail" src="http://img1.imgtn.bdimg.com/it/u=4069161379,2573770402&fm=26&gp=0.jpg" class="set-image"></image>
+				</block>
 			</view>
 		</view>
 	</view>
@@ -34,16 +18,18 @@
 	export default {
 		data() {
 			return {
-
+				items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 			}
 		},
 		methods: {
-			goDetail(){
+			goDetail() {
 				uni.navigateTo({
-					url:'/pages/setDetail/setDetail'
+					url: '/pages/setDetail/setDetail'
 				})
-			}
-		}
+			},
+
+		},
+
 	}
 </script>
 
@@ -57,6 +43,7 @@
 		top: 0;
 		bottom: 0;
 	}
+
 	.main {
 		display: flex;
 		flex-direction: column;
@@ -72,8 +59,8 @@
 		width: 100%;
 		justify-content: center;
 	}
-	
-	.content{
+
+	.content {
 		width: 100%;
 		height: 80%;
 		/* background-color: #5989B9; */
@@ -81,20 +68,19 @@
 		box-sizing: border-box;
 		overflow-y: scroll;
 	}
-	
-	.set-image-wrapper{
+
+	.set-image-wrapper {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		width: 100%;
-		background-color: #00000000;
 	}
-	
-	.set-image{
-		width: 40%;
+
+	.set-image {
+		width: 47%;
 		height: 200upx;
-		background: #8F8F94;
+		/* background: #8F8F94; */
 		border: solid 2upx #5989B9;
 		margin-bottom: 30upx;
 	}
